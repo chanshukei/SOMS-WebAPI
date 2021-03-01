@@ -2,11 +2,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SOMS_WebAPI.Models.Context;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,7 +28,11 @@ namespace SOMS_WebAPI
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddDbContext<AccessRightContext>(
+                options => {
+                    options.UseSqlServer("Server=tcp:edwardchan.database.windows.net,1433;Initial Catalog=soms;Persist Security Info=False;User ID=chanshukei;Password=Ch@nJ1ng;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
+                });
+            
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
