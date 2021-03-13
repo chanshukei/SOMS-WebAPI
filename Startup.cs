@@ -24,11 +24,7 @@ namespace SOMS_WebAPI
         public void ConfigureServices(IServiceCollection services)
         {
             string serverConnStr = "Server=tcp:edwardchan.database.windows.net,1433;Initial Catalog=soms;Persist Security Info=False;User ID=chanshukei;Password=Ch@nJ1ng;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;";
-            services.AddDbContext<AccessRightContext>(
-                options => {
-                    options.UseSqlServer(serverConnStr);
-                });
-            services.AddDbContext<LoginResultContext>(
+            services.AddDbContext<SqlServerContext>(
                 options => {
                     options.UseSqlServer(serverConnStr);
                 });

@@ -15,9 +15,9 @@ namespace SOMS_WebAPI.Controllers
     [ApiController]
     public class LoginResultsController : ControllerBase
     {
-        private readonly LoginResultContext _context;
+        private readonly SqlServerContext _context;
 
-        public LoginResultsController(LoginResultContext context)
+        public LoginResultsController(SqlServerContext context)
         {
             _context = context;
         }

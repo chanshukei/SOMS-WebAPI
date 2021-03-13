@@ -15,9 +15,9 @@ namespace SOMS_WebAPI.Controllers
     [ApiController]
     public class AccessRightsController : ControllerBase
     {
-        private readonly AccessRightContext _context;
+        private readonly SqlServerContext _context;
 
-        public AccessRightsController(AccessRightContext context)
+        public AccessRightsController(SqlServerContext context)
         {
             _context = context;
             // for read only, no track changes needed
