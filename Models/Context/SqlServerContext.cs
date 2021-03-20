@@ -14,5 +14,8 @@ namespace SOMS_WebAPI.Models.Context
         public DbSet<LoginResult> LoginResults { get; set; }
         public DbSet<SelectOption> SelectOptions { get; set; }
         public DbSet<SOMS_WebAPI.Models.Customer> Customer { get; set; }
+        public DbSet<SOMS_WebAPI.Models.Quotation> Quotation { get; set; }
+        public DbSet<SOMS_WebAPI.Models.DeliveryAddress> DeliveryAddress { get; set; }
+        public DbSet<SOMS_WebAPI.Models.HashTag> HashTag { get; set; }
     }
 }
